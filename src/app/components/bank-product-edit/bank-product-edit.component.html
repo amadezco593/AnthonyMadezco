@@ -1,0 +1,66 @@
+
+  
+  <div class="form-container">
+    <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+      <h2>Formulario de Edición</h2>
+      <hr>
+      <div class="form-row">
+        <div class="form-group">
+          <label for="id">ID</label>
+          <input type="text" id="id" formControlName="id" class="form-control" />
+        </div>
+  
+        <div class="form-group">
+          <label for="name">name</label>
+          <input type="text" id="name" formControlName="name" class="form-control"
+          [ngClass]="{'is-invalid': name?.invalid && (name?.touched || name?.dirty)}" />
+          <div *ngIf="name?.invalid && (name?.touched || name?.dirty)" class="error-message">
+            <small *ngIf="name?.errors?.['required']">Este campo es requerido</small>
+            <small *ngIf="name?.errors?.['pattern']">El nombre debe tener entre 5 a 100 caracteres</small>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <input type="text" id="description" formControlName="description" class="form-control" 
+          [ngClass]="{'is-invalid': description?.invalid && (description?.touched || description?.dirty)}" />
+          <div *ngIf="description?.invalid && (description?.touched || description?.dirty)" class="error-message">
+            <small *ngIf="description?.errors?.['required']">Este campo es requerido</small>
+            <small *ngIf="description?.errors?.['pattern']">La descripción debe tener entre 10 a 200 caracteres</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="logo">Logo</label>
+          <input type="text" id="logo" formControlName="logo" class="form-control" 
+          [ngClass]="{'is-invalid': logo?.invalid && (logo?.touched || logo?.dirty)}" />
+          <div *ngIf="logo?.invalid && (logo?.touched || logo?.dirty)" class="error-message">
+            <small *ngIf="logo?.errors?.['required']">Este campo es requerido</small>
+          </div>
+        </div>
+      </div>
+  
+      <div class="form-row">
+        <div class="form-group">
+          <label for="date_release">Fecha Liberación</label>
+          <input type="date" id="date_release" formControlName="date_release" class="form-control" (change)="releaseDateSelect($event)"
+          [ngClass]="{'is-invalid': date_release?.invalid && (date_release?.touched || date_release?.dirty)}" />
+          <div *ngIf="date_release?.invalid && (date_release?.touched || date_release?.dirty)" class="error-message">
+            <small *ngIf="date_release?.errors?.['required']">Este campo es requerido</small>
+            <small *ngIf="date_release?.errors?.['futureDate']">La fecha seleccionada debe ser mayor o igual a la fecha actual</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="date_revision">Fecha Revisión</label>
+          <input type="date" id="date_revision" formControlName="date_revision" class="form-control" />
+        </div>
+      </div>
+  
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary" [disabled]="registroForm.invalid">Enviar</button>
+      </div>
+    </form>
+  </div>

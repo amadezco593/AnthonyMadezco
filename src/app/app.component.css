@@ -1,0 +1,59 @@
+/* Estilos generales para el encabezado */
+.header-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+    border: 2px solid #eaeaea;
+  }
+  
+  .header-logo {
+    width: 30px; /* Ajuste del tamaño del logo */
+    height: auto;
+    /*margin-right: 5px;*/
+  }
+  
+  .header-title {
+    font-family: 'Arial', sans-serif;
+    font-size: 28px;
+    font-weight: bold;
+    color: #00274d;
+  }
+  
+  /* Media Queries para pantallas pequeñas (móviles) */
+  @media (max-width: 768px) {
+    .header-container {
+      flex-direction: column;
+      padding: 10px;
+    }
+  
+    .header-logo {
+      margin-right: 0;
+      margin-bottom: 10px;
+      width: 40px; /* Reducción del tamaño del logo en móviles */
+    }
+  
+    .header-title {
+      font-size: 22px;
+    }
+  }
+  
+  /* Media Queries para pantallas muy pequeñas (móviles muy pequeños) */
+  @media (max-width: 480px) {
+    .header-container {
+      padding: 5px;
+    }
+  
+    .header-logo {
+      width: 30px; /* Tamaño aún más pequeño del logo */
+    }
+  
+    .header-title {
+      font-size: 18px;
+    }
+  }
+
+  .body{
+    background-color: #f3f4f5;
+  }

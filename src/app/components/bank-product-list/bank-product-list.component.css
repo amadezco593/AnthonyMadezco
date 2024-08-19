@@ -1,0 +1,51 @@
+.container {
+  padding: 20px;
+}
+.filtroBoton{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.search-container,.add-button{
+  height: 30px;
+}
+
+.search-container {
+  width: 30%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  border: 2px solid #f3f0f0;
+}
+
+.add-button {
+  float: right;
+  margin-bottom: 20px;
+  background-color: #fdd835 !important;
+  color: black !important;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell {
+  background-color: #e0e0e0;
+  text-align: left;
+}
+
+td.mat-cell {
+  text-align: left;
+}
+
+mat-paginator {
+  margin-top: 20px;
+}
+
+.imagenTabla{
+  border-radius: 50%;
+  width: 25%;
+  height: 25%;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
